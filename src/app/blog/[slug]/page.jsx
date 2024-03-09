@@ -21,7 +21,6 @@ async function getData(slug) {
 
 async function BlogArticle({ params }) {
   const data = await getData(params.slug);
-  console.log(data);
   return (
     <div className="min-w-full mx-auto">
       <h1 className="text-3xl font-bold text-center mt-8">{data.title}</h1>
