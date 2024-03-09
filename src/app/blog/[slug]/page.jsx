@@ -35,7 +35,7 @@ async function BlogArticle({ params }) {
           className="rounded-lg mt-8 block mx-auto"
         />
       </div>
-      <div className="mt-8 mx-auto prose prose-headings:text-white prose-lg text-white prose-a:text-yellow-200">
+      <div className="mt-8 mx-auto prose prose-lg prose-p:text-white prose-blockquote:text-white prose-figure:text-white prose-figcaption:text-white prose-strong:text-white prose-em:text-white prose-ol:text-white prose-ul:text-white prose-li:text-white text-white prose-headings:text-white  prose-a:text-red-200 hover:prose-a:text-red-400 ">
         <PortableText value={data.body} onMissingComponent={false} />
       </div>
     </div>
