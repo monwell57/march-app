@@ -94,7 +94,7 @@ const Hero = ({data, year}) => {
             <div className="hidden xl:flex items-center xl:gap-x-0">
             {year.map((tourR) => (
 
-              <div>{tourR.tourRange}</div> 
+              <div key={tourR.tourRange}>{tourR.tourRange}</div> 
             ))}
               <div className="relative w-2 h-2 mx-2 flex items-center justify-center">
                 <Image fill src={"/assets/hero/dot.svg"} />
@@ -103,10 +103,9 @@ const Hero = ({data, year}) => {
               <div className="relative w-2 h-2 mx-2 flex items-center justify-center">
                 <Image fill src={"/assets/hero/dot.svg"} />
               </div>
-              {/* {data.map((item) => (<div>{item.tourYear}</div>))} */}
               {year.map((tourY) => (
 
-<div>{tourY.tourYear}</div> 
+<div key={tourY.tourYear}>{tourY.tourYear}</div> 
 ))}
             </div>
             <div className="hidden xl:flex items-center justify-center relative w-7 h-7 mx-4">
