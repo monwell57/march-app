@@ -25,7 +25,6 @@ import SectionHeader from '../SectionHeader'
 
 const Events = async () => {
   const events = await getEvents();
-  console.log(events);
   return (
     <section className="section" id="tours">
       <div className="container mx-auto">

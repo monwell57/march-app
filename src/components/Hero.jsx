@@ -9,7 +9,14 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
+
 const Hero = ({data}) => {
+  // const tourLocal = ['Rome, Italy', 3000, 'Paris, France', 3000, 'Berlin, Germany', 3000, 'Rio Janeiro, Brazil', 3000]
+  const tourLocal = data.reduce((acc, cur) => {
+    acc.push(cur.city);
+    acc.push(cur.duration);
+    return acc;
+  }, []);
 
   return (
     <section className="h-[80vh] xl:h-[850px] id='home">
@@ -93,13 +100,13 @@ const Hero = ({data}) => {
               <div className="relative w-2 h-2 mx-2 flex items-center justify-center">
                 <Image fill src={"/assets/hero/dot.svg"} />
               </div>
-              <div>{firstTourYear}</div>
+              {/* {data.map((item) => (<div>{item.tourYear}</div>))} */}
             </div>
             <div className="hidden xl:flex items-center justify-center relative w-7 h-7 mx-4">
               <Image fill src={"/assets/hero/mic.svg"} alt="" />
             </div>
             <TypeAnimation
-              // sequence={}
+              sequence={tourLocal}
               wrapper="div"
               speed={10}
               deletionSpeed={10}
