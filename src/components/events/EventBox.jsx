@@ -1,15 +1,19 @@
+"use client"
+
 import React from "react";
 import Image from "next/image";
 import { RiMapPin2Fill } from "react-icons/ri";
+import {motion} from 'framer-motion'
+import { fadeIn } from "../../../variants";
 
 const EventBox = ({ events }) => {
   return (
-    <div className="bg-secondary/60 rounded-[10px] p-4 xl:p-12 relative">
+    <motion.div variants={fadeIn('up', .4)} initial='hidden' whileInView={'show'} viewport={{once: false, amount: .3}} className="bg-secondary/60 rounded-[10px] p-4 xl:p-12 relative">
       <div className="flex flex-col xl:flex-row justify-between h-[620px] xl:h-full gap-x-4">
         {/* image */}
         <div className="hidden xl:flex w-[400px]">
           <Image
-            src={"/assets/assets/events/singer.png"}
+            src={"/assets/events/singer.png"}
             width={358}
             height={489}
             priority
@@ -52,13 +56,13 @@ const EventBox = ({ events }) => {
                 <div className="w-[100px] text-[17px] text-center text-accent font-bold">
                   {event.priceRange}
                 </div>
-                <button>Get Tickets</button>
+                <button className="btn btn-sm btn-accent">Get Tickets</button>
               </div>
             );
           })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

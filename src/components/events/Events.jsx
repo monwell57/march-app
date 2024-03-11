@@ -2,6 +2,7 @@ import React from "react";
 // import { getEvents } from "../../lib/data";
 import EventBox from "./EventBox";
 import { client } from "@/lib/sanity";
+import SectionHeader from '../SectionHeader'
 
 
 
@@ -28,6 +29,7 @@ const Events = async () => {
   return (
     <section className="section" id="tours">
       <div className="container mx-auto">
+      <SectionHeader pretitle="World Tour" title="Upcoming Events"/>
         
         <EventBox events={events} />
       </div>
