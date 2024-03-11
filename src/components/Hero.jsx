@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
 
-const Hero = ({data}) => {
+const Hero = ({data, year}) => {
   // const tourLocal = ['Rome, Italy', 3000, 'Paris, France', 3000, 'Berlin, Germany', 3000, 'Rio Janeiro, Brazil', 3000]
   const tourLocal = data.reduce((acc, cur) => {
     acc.push(cur.city);
@@ -92,7 +92,10 @@ const Hero = ({data}) => {
           </MouseParallaxContainer>
           <div className="min-h-[60px] flex items-center mb-6">
             <div className="hidden xl:flex items-center xl:gap-x-0">
-              {/* <div>{firstTourRange}</div> */}
+            {year.map((tourR) => (
+
+              <div>{tourR.tourRange}</div> 
+            ))}
               <div className="relative w-2 h-2 mx-2 flex items-center justify-center">
                 <Image fill src={"/assets/hero/dot.svg"} />
               </div>
@@ -101,6 +104,10 @@ const Hero = ({data}) => {
                 <Image fill src={"/assets/hero/dot.svg"} />
               </div>
               {/* {data.map((item) => (<div>{item.tourYear}</div>))} */}
+              {year.map((tourY) => (
+
+<div>{tourY.tourYear}</div> 
+))}
             </div>
             <div className="hidden xl:flex items-center justify-center relative w-7 h-7 mx-4">
               <Image fill src={"/assets/hero/mic.svg"} alt="" />

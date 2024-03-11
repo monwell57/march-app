@@ -14,15 +14,15 @@ export default {
       title: "Duration",
       type: "number",
     },
-    {
-      name: "tourRange",
-      title: "Tour Range",
-      type: "string",
-    },
-    {
-      name: "tourYear",
-      title: "Tour Year",
-      type: "number",
-    },
+    // {
+    //   name: "tourRange",
+    //   title: "Tour Range",
+    //   type: "string",
+    // },
+    // {
+    //   name: "tourYear",
+    //   title: "Tour Year",
+    //   type: "number",
+    // },
   ],
 };
