@@ -90,7 +90,12 @@ const Hero = ({data, year}) => {
               </motion.div>
             </MouseParallaxChild>
           </MouseParallaxContainer>
-          <div className="min-h-[60px] flex items-center mb-6">
+          <motion.div 
+                variants={fadeIn("up", 1)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: false, amount: 0.7 }}
+                className="min-h-[60px] flex items-center mb-6">
             <div className="hidden xl:flex items-center xl:gap-x-0">
             {year.map((tourR) => (
 
@@ -104,9 +109,8 @@ const Hero = ({data, year}) => {
                 <Image fill src={"/assets/hero/dot.svg"} />
               </div>
               {year.map((tourY) => (
-
-<div key={tourY.tourYear}>{tourY.tourYear}</div> 
-))}
+               <div key={tourY.tourYear}>{tourY.tourYear}</div> 
+                ))}
             </div>
             <div className="hidden xl:flex items-center justify-center relative w-7 h-7 mx-4">
               <Image fill src={"/assets/hero/mic.svg"} alt="" />
@@ -119,7 +123,13 @@ const Hero = ({data, year}) => {
               repeat={Infinity}
               cursor={false}
             />
-          </div>
+          </motion.div>
+          <motion.div variants={fadeIn("up", 1.3)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: false, amount: 0.7 }}>
+            <button className="btn btn-lg btn-accent">Get Tickets</button>
+          </motion.div>
         </div>
         {/* Image */}
         <motion.div

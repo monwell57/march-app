@@ -4,5 +4,6 @@ import posts from './posts'
 import blockContent from './blockContent'
 import locationSequence from "./location";
 import tourYear from './tourYear';
+import featuredSong from './featuredSong';
 
-export const schemaTypes = [events, albums, posts, blockContent, locationSequence, tourYear]
+export const schemaTypes = [events, albums, posts, blockContent, locationSequence, tourYear, featuredSong]
