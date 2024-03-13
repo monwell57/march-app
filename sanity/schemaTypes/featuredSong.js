@@ -10,6 +10,11 @@ export default {
       type: "string",
     },
     {
+      name: "artist",
+      title: "Artist",
+      type: "string",
+    },
+    {
         name: 'track',
         title: 'Track',
         type: 'array',

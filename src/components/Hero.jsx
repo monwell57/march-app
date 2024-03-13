@@ -19,7 +19,7 @@ const Hero = ({data, year}) => {
   }, []);
 
   return (
-    <section className="h-[80vh] xl:h-[850px] id='home">
+    <section className="h-[80vh] xl:h-[850px]" id='home'>
       <div className="container mx-auto h-full flex justify-center items-center xl:justify-start">
         {/* Text */}
         <div className="h-full flex flex-col justify-center items-center xl:items-start z-20 pt-12">

@@ -24,6 +24,7 @@ export async function fetchYear() {
 }
 export async function fetchSong() {
   const query = ` *[_type == "featured"] {
+    artist,
     featuresong,
     "trackName": track[0].name,
     "fileLocation": track[0].src.asset->url
@@ -37,13 +38,12 @@ export default async function Home() {
   const data = await fetchLocations()
   const tourYear = await fetchYear()
   const mainSong = await fetchSong()
-  // console.log(mainSong)
 
   return (
     <main className="">
-    <Hero data={data}  year={tourYear}/>
-    <Player song={mainSong} />
-     <Events />
+      <Hero data={data}  year={tourYear}/>
+      <Player song={mainSong} />
+      <Events />
       {/* <BlogList /> */}
       <div className='h-[4000px]'> </div>
     </main>
