@@ -32,11 +32,20 @@ export async function fetchSong() {
   const song = await client.fetch(query);
   return song;
 }
+export async function fetchAlbum() {
+  const query = ` *[_type == "album"] {
+  ...
+  }`;
+  const album = await client.fetch(query);
+  return album;
+}
 
 export default async function Home() {
   const data = await fetchLocations();
   const tourYear = await fetchYear();
   const mainSong = await fetchSong();
+  const mainAlbum = await fetchAlbum();
+  // console.log(mainAlbum);
 
   return (
     <main className="">
