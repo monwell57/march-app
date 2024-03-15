@@ -26,15 +26,18 @@ const AlbumSlider = () => {
         {data.map((album) => {
           return (
             <SwiperSlide key={album._id} className="mb-12">
-              <div>
-                <Image
-                  src={urlFor(album.img).url()}
-                  alt={album.name}
-                  width={300}
-                  height={300}
-                />
+              <div className="w-full bg-secondary/80 rounded-[10px] flex flex-col xl:flex-row items-center p-6 xl:p-12 gap-x-12">
+                <div className="hidden xl:flex w-[300px] h-[300px] xl:w-[500px] xl:h-[500px] relative cursor-pointer rounded-[10px] overflow-hidden ">
+                  <Image
+                    src={urlFor(album.img).url()}
+                    alt={album.name}
+                    fill
+                    priority
+                    className="object-contain"
+                  />
+                </div>
+                <div>Track Container</div>
               </div>
-              <div>Track Container</div>
             </SwiperSlide>
           );
         })}
