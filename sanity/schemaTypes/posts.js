@@ -33,6 +33,11 @@ export default {
       },
     },
     {
+      name: 'createdAt',
+      title: 'Created At',
+      type: 'datetime',
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'blockContent',

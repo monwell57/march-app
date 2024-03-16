@@ -11,18 +11,22 @@ const PostList = ({ posts }) => {
   console.log(firstThreePosts.length);
   return (
     <div>
-      <div>
+      <div className="flex">
         {firstThreePosts.map((post) => {
           console.log(post);
           const { _id, _createdAt, title, description } = post;
           return (
-            <div>
+            <div key={_id} className="flex-1">
               {" "}
-              {new Date(_createdAt).toLocaleDateString("en-US", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              })}{" "}
+              <div className="text-accent font-bold mb-1">
+                {new Date(_createdAt).toLocaleDateString("en-US", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}{" "}
+              </div>
+              <div className="text-xl font-medium mb-4">{title}</div>
+              <p className="text-white/30 mb-6 font-light">{description}</p>
             </div>
           );
         })}
