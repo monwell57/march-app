@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import { client } from "../lib/sanity";
 import { Player } from "@/components/Player";
 import Albums from "@/components/albums/Albums";
+import Blog from "@/components/blog/Blog";
 
 export async function fetchLocations() {
   const query = `*[_type == "location"] {
@@ -58,7 +59,7 @@ export default async function Home() {
       <Player song={mainSong} />
       <Events />
       <Albums />
-      {/* <BlogList /> */}
+      <Blog />
       <div className="h-[4000px]"> </div>
     </main>
   );

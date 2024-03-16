@@ -40,53 +40,92 @@ body {
 
 /* main player */
 .rap-progress {
-  @apply !bg-[#6519c8]
+  @apply !bg-[#6519c8];
 }
 
 .rap-pin {
-  @apply !bg-white
+  @apply !bg-white;
 }
 
 .rap-container .rap-slider .rap-progress .rap-pin {
-  @apply !w-[14px] !h-[14px] !bg-white
+  @apply !w-[14px] !h-[14px] !bg-white;
 }
 
 .rap-container .rap-slider .rap-progress .rap-pin:hover {
-  @apply scale-[1.2] transition-all duration-300
+  @apply scale-[1.2] transition-all duration-300;
 }
-.rap-container  {
-  @apply !p-0
+.rap-container {
+  @apply !p-0;
 }
 .rap-container .rap-pp-button svg {
-  @apply w-[14px]
+  @apply w-[14px];
 }
 .rap-container .rap-volume .rap-volume-btn svg {
-  @apply w-[22px]
+  @apply w-[22px];
 }
 .rap-container .rap-pp-button svg path,
-.rap-container .rap-volume .rap-volume-btn svg path
- {
-@apply fill-accent
+.rap-container .rap-volume .rap-volume-btn svg path {
+  @apply fill-accent;
 }
 
-.rap-current-time, .rap-total-time {
-  @apply font-montserrat text-[13px] font-medium
+.rap-current-time,
+.rap-total-time {
+  @apply font-montserrat text-[13px] font-medium;
 }
 
 .rap-container .rap-slider {
-  @apply !bg-[#33335b] !bg-[2px]
+  @apply !bg-[#33335b] !bg-[2px];
 }
 
 .rap-container .rap-controls span {
-  @apply text-[15px]
+  @apply text-[15px];
 }
 .rap-volume-btn.rap-volume-open svg path {
-  @apply fill-white
+  @apply fill-white;
 }
 .rap-volume-controls {
-  @apply !bg-primary/80
+  @apply !bg-primary/80;
 }
 
 .active {
-  @apply border-b-2 border-accent 
+  @apply border-b-2 border-accent;
+}
+
+.album-slider .rap-container .rap-volume .rap-volume-controls {
+  @apply !bg-accent;
+}
+
+.album-slider .rap-container .rap-slider {
+  @apply !bg-primary/40;
+}
+.album-slider .rap-container .rap-slider .rap-progress {
+  @apply !bg-white;
+}
+.album-slider .rap-container .rap-pp-button svg {
+  @apply w-[12px];
+}
+.album-slider .rap-container .rap-volume .rap-volume-btn svg {
+  @apply w-[20px];
+}
+
+.album-slider .rap-container .rap-pp-button svg path,
+.album-slider .rap-container .rap-volume .rap-volume-btn svg path {
+  @apply fill-accent;
+}
+
+.album-slider .rap-container .rap-controls span {
+  @apply !text-sm;
+}
+
+.album-player {
+  @apply !w-[110px] !min-w-0 text-center;
+}
+
+.album-player .rap-controls .rap-slider,
+.album-player .rap-controls .rap-total-time {
+  @apply hidden;
+}
+
+.thumb-slider .swiper-slide-thumb-active {
+  @apply border-2 border-accent overflow-hidden transition-all duration-700;
 }

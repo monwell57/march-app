@@ -7,12 +7,17 @@ import SectionHeader from "../SectionHeader";
 
 const Albums = () => {
   return (
-    <section id="discgraphy">
+    <section id="discography">
       <div className="container mx-auto">
         <SectionHeader pretitle="Discography" title="Popular Albums" />
-        <div>
+        <motion.div
+          variants={fadeIn("up", 0.4)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.3 }}
+        >
           <AlbumSlider />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
