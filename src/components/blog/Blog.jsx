@@ -19,7 +19,7 @@ async function getPosts() {
 
 const Blog = async () => {
   const data = await getPosts();
-  // console.log("[Postpage]:", data);
+  console.log("[Postpage]:", data);
   return (
     <section className="section" id="blog">
       <div className="container mx-auto">
