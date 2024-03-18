@@ -20,8 +20,8 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        singerOverlay: "url(/assets/assets/hero/singer-overlay.png)",
-        newsletter: "url(/assets/assets/newsletter/bg.png)",
+        singerOverlay: "url(/assets/hero/singer-overlay.png)",
+        newsletter: "url(/assets/newsletter/bg.png)",
       },
       fontFamily: {
         alexBrush: [`var(--font-alexBrush)`, "sans-serif"],
@@ -38,5 +38,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwind-scrollbar"), require('@tailwindcss/typography')],
+  plugins: [require("tailwind-scrollbar"), require("@tailwindcss/typography")],
 };

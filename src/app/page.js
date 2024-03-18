@@ -1,10 +1,11 @@
-import BlogList from "../components/BlogList";
+import BlogList from "../../../artist-website/src/components/BlogList";
 import Events from "@/components/events/Events";
 import Hero from "@/components/Hero";
 import { client } from "../lib/sanity";
 import { Player } from "@/components/Player";
 import Albums from "@/components/albums/Albums";
 import Blog from "@/components/blog/Blog";
+import Newsletter from "@/components/Newsletter";
 
 export async function fetchLocations() {
   const query = `*[_type == "location"] {
@@ -60,7 +61,8 @@ export default async function Home() {
       <Events />
       <Albums />
       <Blog />
-      <div className="h-[4000px]"> </div>
+      <Newsletter />
+      {/* <div className="h-[4000px]"> </div> */}
     </main>
   );
 }
