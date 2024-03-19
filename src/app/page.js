@@ -7,6 +7,8 @@ import Albums from "@/components/albums/Albums";
 import Blog from "@/components/blog/Blog";
 import Newsletter from "@/components/Newsletter";
 
+export const dynamic = "forced-dynamic";
+
 export async function fetchLocations() {
   const query = `*[_type == "location"] {
     duration,
@@ -47,12 +49,24 @@ export async function fetchAlbum() {
   return album;
 }
 
+export async function getPosts() {
+  const query = `*[_type == 'post'] | order(_createdAt desc) {
+    ...,
+        title, 
+        description,
+        "currentSlug": slug.current,
+        createdAt
+      }`;
+  const posts = await client.fetch(query);
+  return posts;
+}
+
 export default async function Home() {
   const data = await fetchLocations();
   const tourYear = await fetchYear();
   const mainSong = await fetchSong();
   const mainAlbum = await fetchAlbum();
-  // console.log(mainAlbum);
+  // console.log(posts);
 
   return (
     <main className="">

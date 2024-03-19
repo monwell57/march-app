@@ -20,12 +20,12 @@ const PostList = ({ posts }) => {
       <div className="flex flex-col xl:flex-row justify-between gap-12 py-10 xl:pt-16 xl:pb-24 border-t border-white/10">
         {firstThreePosts.map((post) => {
           console.log(post);
-          const { _id, _createdAt, title, description } = post;
+          const { _id, createdAt, title, description } = post;
           return (
             <div key={_id} className="flex-1">
               {" "}
               <div className="text-accent font-bold mb-1">
-                {new Date(_createdAt).toLocaleDateString("en-US", {
+                {new Date(createdAt).toLocaleDateString("en-US", {
                   day: "numeric",
                   month: "long",
                   year: "numeric",
@@ -44,7 +44,9 @@ const PostList = ({ posts }) => {
           );
         })}
       </div>
-      <button className="btn btn-lg btn-accent">View all posts</button>
+      <Link href="/blog">
+        <button className="btn btn-lg btn-accent">View all posts</button>
+      </Link>
     </motion.div>
   );
 };
