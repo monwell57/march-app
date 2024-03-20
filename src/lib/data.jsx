@@ -1,27 +1,12 @@
-const { Events } = require("react-scroll");
+import { client } from "../lib/sanity";
 
-// Schema for Events
-// *[_type == 'event'] {
-//     name,
-//     date,
-//     priceRange,
-//     location {
-//         city,
-//         country,
-//         venue
-//       },
+export const revalidate = 30;
 
-// }
-
-// *[_type == 'album'] {
-//     img,
-//     name,
-//     tracks[] {
-//       name,
-//       src {
-//         asset-> {
-//           url
-//         }
-//       }
-//     }
-//   }
+export async function fetchLocations() {
+  const query = `*[_type == "location"] {
+        duration,
+        city,
+      } `;
+  const locations = await client.fetch(query);
+  return locations;
+}

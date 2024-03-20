@@ -1,4 +1,3 @@
-import BlogList from "../../../artist-website/src/components/BlogList";
 import Events from "@/components/events/Events";
 import Hero from "@/components/Hero";
 import { client } from "../lib/sanity";
@@ -6,17 +5,9 @@ import { Player } from "@/components/Player";
 import Albums from "@/components/albums/Albums";
 import Blog from "@/components/blog/Blog";
 import Newsletter from "@/components/Newsletter";
+import { fetchLocations } from "../lib/data";
 
-export const dynamic = "forced-dynamic";
-
-export async function fetchLocations() {
-  const query = `*[_type == "location"] {
-    duration,
-    city,
-  } `;
-  const locations = await client.fetch(query);
-  return locations;
-}
+export const revalidate = 30;
 
 export async function fetchYear() {
   const query = `*[_type == "year"]{
@@ -66,7 +57,7 @@ export default async function Home() {
   const tourYear = await fetchYear();
   const mainSong = await fetchSong();
   const mainAlbum = await fetchAlbum();
-  // console.log(posts);
+  console.log("[HomePage]", data);
 
   return (
     <main className="">

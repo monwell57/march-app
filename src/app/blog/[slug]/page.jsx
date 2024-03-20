@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import { client, urlFor } from "../../../lib/sanity";
 import { PortableText } from "@portabletext/react";
+
+export const revalidate = 30;
 
 async function getData(slug) {
   const query = `*[_type == 'post' && slug.current == "${slug}"] {
@@ -13,12 +16,22 @@ async function getData(slug) {
   } [0]
         
     `;
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, {
+    next: {
+      revalidate: 30,
+    },
+  });
+  if (!data) {
+    notFound();
+  }
   return data;
 }
 
 async function BlogArticle({ params }) {
   const data = await getData(params.slug);
+  if (!data) {
+    notFound();
+  }
   return (
     <div className="min-w-full mx-auto">
       <h1 className="text-3xl font-bold text-center mt-8">{data.title}</h1>

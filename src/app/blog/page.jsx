@@ -2,7 +2,7 @@ import Link from "next/link";
 import { client, urlFor } from "../../lib/sanity";
 import Image from "next/image";
 
-export const dynamic = "forced-dynamic";
+export const revalidate = 30;
 
 async function getPosts() {
   const query = `*[_type == 'post'] | order(_createdAt desc) {
