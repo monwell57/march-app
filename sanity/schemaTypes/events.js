@@ -27,6 +27,11 @@ export default {
       ],
     },
     {
+      name: 'url',
+      title: 'URL',
+      type: 'url',
+    },
+    {
       name: 'priceRange',
       title: 'Price Range',
       type: 'string',

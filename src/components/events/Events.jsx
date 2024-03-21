@@ -7,7 +7,8 @@ import SectionHeader from "../SectionHeader";
 export const revalidate = 30;
 
 async function getEvents() {
-  const query = `*[_type == 'event'] {
+  const query = `*[_type == 'event'] | order(date asc) {
+    url,
         _id,
         name,
         date,
@@ -17,6 +18,7 @@ async function getEvents() {
             country,
             venue
           }
+      
         }     
         `;
   const data = await client.fetch(query);
@@ -25,6 +27,7 @@ async function getEvents() {
 
 const Events = async () => {
   const events = await getEvents();
+  console.log("[EVENTS]", events);
   return (
     <section className="section" id="tours">
       <div className="container mx-auto">
