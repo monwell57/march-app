@@ -17,6 +17,13 @@ export async function fetchYear() {
   const year = await client.fetch(query);
   return year;
 }
+export async function fetchFeaturedTickets() {
+  const query = `*[_type == "featuredEventTickets"]{
+    url
+  } `;
+  const ticketsFeature = await client.fetch(query);
+  return ticketsFeature;
+}
 export async function fetchSong() {
   const query = ` *[_type == "featured"] {
     artist,
@@ -57,11 +64,12 @@ export default async function Home() {
   const tourYear = await fetchYear();
   const mainSong = await fetchSong();
   const mainAlbum = await fetchAlbum();
-  console.log("[HomePage]", data);
+  const mainTickets = await fetchFeaturedTickets();
+  console.log("[HomePage]", mainTickets);
 
   return (
     <main className="">
-      <Hero data={data} year={tourYear} />
+      <Hero data={data} year={tourYear} tickets={mainTickets} />
       <Player song={mainSong} />
       <Events />
       <Albums />
